@@ -1,0 +1,31 @@
+"use strict";
+const plugins = require("./npmextra.plugins");
+const paths = require("./npmextra.paths");
+let allData;
+exports.dataFor = (toolNameArg, cwdArg) => {
+    if (typeof allData == "undefined") {
+        let lookupPath;
+        if (cwdArg) {
+            lookupPath = plugins.path.join(cwdArg, "npmextra.json");
+        }
+        else {
+            lookupPath = paths.configFile;
+        }
+        ;
+        allData = plugins.smartfile.fs.toObjectSync(plugins.path.join(lookupPath));
+    }
+    ;
+    if (toolNameArg) {
+        if (allData[toolNameArg]) {
+            return allData[toolNameArg];
+        }
+        else {
+            plugins.beautylog.error(`There is no data for ${toolNameArg}`);
+            return undefined;
+        }
+    }
+    else {
+        return allData;
+    }
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi90cy9pbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsTUFBWSxPQUFPLFdBQU0sb0JBQ3pCLENBQUMsQ0FENEM7QUFDN0MsTUFBWSxLQUFLLFdBQU0sa0JBQWtCLENBQUMsQ0FBQTtBQUMxQyxJQUFJLE9BQU8sQ0FBQztBQUVELGVBQU8sR0FBRyxDQUFDLFdBQWtCLEVBQUMsTUFBYztJQUNuRCxFQUFFLENBQUEsQ0FBQyxPQUFPLE9BQU8sSUFBSSxXQUFXLENBQUMsQ0FBQSxDQUFDO1FBQzlCLElBQUksVUFBVSxDQUFDO1FBQ2YsRUFBRSxDQUFBLENBQUMsTUFBTSxDQUFDLENBQUEsQ0FBQztZQUNQLFVBQVUsR0FBRyxPQUFPLENBQUMsSUFBSSxDQUFDLElBQUksQ0FBQyxNQUFNLEVBQUMsZUFBZSxDQUFDLENBQUM7UUFDM0QsQ0FBQztRQUFDLElBQUksQ0FBQyxDQUFDO1lBQ0osVUFBVSxHQUFHLEtBQUssQ0FBQyxVQUFVLENBQUM7UUFDbEMsQ0FBQztRQUFBLENBQUM7UUFDRixPQUFPLEdBQUcsT0FBTyxDQUFDLFNBQVMsQ0FBQyxFQUFFLENBQUMsWUFBWSxDQUN2QyxPQUFPLENBQUMsSUFBSSxDQUFDLElBQUksQ0FBQyxVQUFVLENBQUMsQ0FDaEMsQ0FBQztJQUNOLENBQUM7SUFBQSxDQUFDO0lBQ0YsRUFBRSxDQUFBLENBQUMsV0FBVyxDQUFDLENBQUEsQ0FBQztRQUNaLEVBQUUsQ0FBQSxDQUFDLE9BQU8sQ0FBQyxXQUFXLENBQUMsQ0FBQyxDQUFBLENBQUM7WUFDckIsTUFBTSxDQUFDLE9BQU8sQ0FBQyxXQUFXLENBQUMsQ0FBQztRQUNoQyxDQUFDO1FBQUMsSUFBSSxDQUFDLENBQUM7WUFDSixPQUFPLENBQUMsU0FBUyxDQUFDLEtBQUssQ0FBQyx3QkFBd0IsV0FBVyxFQUFFLENBQUMsQ0FBQztZQUMvRCxNQUFNLENBQUMsU0FBUyxDQUFDO1FBQ3JCLENBQUM7SUFDTCxDQUFDO0lBQUMsSUFBSSxDQUFDLENBQUM7UUFDSixNQUFNLENBQUMsT0FBTyxDQUFDO0lBQ25CLENBQUM7QUFDTCxDQUFDLENBQUEifQ==

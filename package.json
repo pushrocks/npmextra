@@ -15,5 +15,16 @@
   "bugs": {
     "url": "https://gitlab.com/pushrocks/npmextra/issues"
   },
-  "homepage": "https://gitlab.com/pushrocks/npmextra#README"
+  "homepage": "https://gitlab.com/pushrocks/npmextra#README",
+  "dependencies": {
+    "@types/q": "0.0.27",
+    "beautylog": "^5.0.14",
+    "q": "^1.4.1",
+    "smartfile": "^4.0.10",
+    "typings-global": "^1.0.6"
+  },
+  "devDependencies": {
+    "should": "^9.0.2",
+    "typings-test": "^1.0.1"
+  }
 }
