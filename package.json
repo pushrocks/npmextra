@@ -17,7 +17,7 @@
   },
   "homepage": "https://gitlab.com/pushrocks/npmextra#README",
   "dependencies": {
-    "@types/q": "0.0.27",
+    "@types/q": "*",
     "beautylog": "^5.0.14",
     "q": "^1.4.1",
     "smartfile": "^4.0.10",

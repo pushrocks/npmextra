@@ -17,7 +17,7 @@ testLTS:
     - npmci test lts
   tags:
     - docker
-    
+
 testSTABLE:
   stage: test
   script:
