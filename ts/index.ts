@@ -32,7 +32,7 @@ export let dataFor = (optionsArg:IDataFor) => {
     if(plugins.smartfile.fs.fileExistsSync(lookupPath)){
         allData = plugins.smartfile.fs.toObjectSync(lookupPath);
     } else {
-        plugins.beautylog.warn(`${lookupPath} is misssing!`);
+        plugins.beautylog.warn(`${lookupPath} is missing!`);
         allData = {};
     };
 
