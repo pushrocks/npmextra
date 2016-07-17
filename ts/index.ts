@@ -1,24 +1,48 @@
 import * as plugins from "./npmextra.plugins"
 import * as paths from "./npmextra.paths";
-let allData;
 
-export let dataFor = (toolNameArg:string,cwdArg?:string) => {
-    if(typeof allData == "undefined"){
-        let lookupPath;
-        if(cwdArg){
-            lookupPath = plugins.path.join(cwdArg,"npmextra.json");
-        } else {
-            lookupPath = paths.configFile;
-        };
-        allData = plugins.smartfile.fs.toObjectSync(
-            plugins.path.join(lookupPath)
-        );
+export interface IDataFor {
+    toolName:string;
+    defaultSettings?;
+    cwd?:string
+}
+
+export let dataFor = (optionsArg:IDataFor) => {
+    
+    // handle default settings
+    if(
+        typeof optionsArg.toolName != undefined
+        && typeof optionsArg.defaultSettings != undefined
+    ){
+        let newDefaultOptions = {};
+        newDefaultOptions[optionsArg.toolName] = optionsArg.defaultSettings;
+        optionsArg.defaultSettings = newDefaultOptions;
     };
-    if(toolNameArg){
-        if(allData[toolNameArg]){
-            return allData[toolNameArg];
+
+    // set lookup path
+    let lookupPath:string;
+    if(optionsArg.cwd){
+        lookupPath = plugins.path.join(optionsArg.cwd,"npmextra.json");
+    } else {
+        lookupPath = paths.configFile;
+    };
+    
+    // get allData
+    let allData;
+    if(plugins.smartfile.fs.fileExistsSync(lookupPath)){
+        allData = plugins.smartfile.fs.toObjectSync(lookupPath);
+    } else {
+        plugins.beautylog.warn(`${lookupPath} is misssing!`);
+        allData = {};
+    };
+
+    //assign all data
+    allData = plugins.lodash.merge({},optionsArg.defaultSettings,allData);
+    if(optionsArg.toolName){
+        if(allData[optionsArg.toolName]){
+            return allData[optionsArg.toolName];
         } else {
-            plugins.beautylog.error(`There is no data for ${toolNameArg}`);
+            plugins.beautylog.error(`There is no data for ${optionsArg.toolName}`);
             return undefined;
         }
     } else {
