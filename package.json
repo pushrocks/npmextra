@@ -22,12 +22,12 @@
     "beautylog": "^5.0.14",
     "lodash": "^4.13.1",
     "q": "^1.4.1",
-    "smartfile": "^4.0.10",
+    "smartfile": "^4.0.11",
     "typings-global": "^1.0.6"
   },
   "devDependencies": {
     "@types/should": "^8.1.26",
-    "should": "^9.0.2",
+    "should": "^10.0.0",
     "typings-test": "^1.0.1"
   }
 }
