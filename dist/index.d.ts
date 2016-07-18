@@ -4,3 +4,4 @@ export interface IDataFor {
     cwd?: string;
 }
 export declare let dataFor: (optionsArg: IDataFor) => any;
+export declare let configFilePresent: () => boolean;

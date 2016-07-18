@@ -48,4 +48,8 @@ export let dataFor = (optionsArg:IDataFor) => {
     } else {
         return allData;
     }
+};
+
+export let configFilePresent = ():boolean => {
+    return plugins.smartfile.fs.fileExistsSync(paths.configFile);
 }

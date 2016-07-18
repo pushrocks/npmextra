@@ -13,4 +13,13 @@ describe("npmextra",function(){
         });
         testData.should.have.ownProperty("someKey2");
     });
+    it("should read a config file",function(){
+        let testData = npmExtra.dataFor({
+            toolName:"testTool",
+            defaultSettings:{someKey2:"someValue2"},
+            cwd: path.join(process.cwd(),"test/")
+        });
+        testData.should.have.ownProperty("someKey2");
+        testData.testValue.should.equal(2);
+    });
 });
