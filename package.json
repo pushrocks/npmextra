@@ -18,16 +18,16 @@
   },
   "homepage": "https://gitlab.com/pushrocks/npmextra#README",
   "dependencies": {
-    "@types/q": "^0.0.27",
-    "beautylog": "^5.0.14",
-    "lodash": "^4.13.1",
+    "@types/q": "^0.x.x",
+    "beautylog": "^5.0.20",
+    "lodash": "^4.15.0",
     "q": "^1.4.1",
-    "smartfile": "^4.0.11",
+    "smartfile": "^4.0.13",
     "typings-global": "^1.0.6"
   },
   "devDependencies": {
-    "@types/should": "^8.1.26",
-    "should": "^10.0.0",
+    "@types/should": "^8.1.27",
+    "should": "^11.1.0",
     "typings-test": "^1.0.1"
   }
 }
