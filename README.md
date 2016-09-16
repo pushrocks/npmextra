@@ -7,7 +7,7 @@ npmextra is a hub for a series of js tools that help writing, documenting and ma
 [![npm](https://push.rocks/assets/repo-button-npm.svg)](https://www.npmjs.com/package/npmpage)
 [![git](https://push.rocks/assets/repo-button-git.svg)](https://gitlab.com/pushrocks/npmpage)
 [![git](https://push.rocks/assets/repo-button-mirror.svg)](https://github.com/pushrocks/npmpage)
-[![docs](https://push.rocks/assets/repo-button-docs.svg)](https://pushrocks.gitlab.io/npmpage/gitbook)
+[![docs](https://push.rocks/assets/repo-button-docs.svg)](https://pushrocks.gitlab.io/npmpage/)
 
 ## Status for master
 [![build status](https://gitlab.com/pushrocks/npmpage/badges/master/build.svg)](https://gitlab.com/pushrocks/npmpage/commits/master)
