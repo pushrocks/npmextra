@@ -3,5 +3,14 @@ export interface IDataFor {
     defaultSettings?: any;
     cwd?: string;
 }
-export declare let dataFor: (optionsArg: IDataFor) => any;
-export declare let configFilePresent: () => boolean;
+/**
+ * gets you the configuration data for
+ * @executes SYNC
+ */
+export declare let dataFor: <IOptions>(optionsArg: IDataFor) => IOptions;
+/**
+ * tells you if a configfile is present
+ */
+export declare let configFilePresent: (optionsArg: {
+    cwd?: string;
+}) => boolean;
