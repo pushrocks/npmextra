@@ -20,7 +20,7 @@ npmextra is a hub for a series of js tools that help writing, documenting and ma
 [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 ## Usage
-The main purpose of npmextra is to configure different tools using one npmextra.json. This way complex setups avaoid complexity through many configuration files.
+The main purpose of npmextra is to configure different tools using one npmextra.json. This way complex setups avoid additional complexity caused by too many configuration files.
 
 npmextra.json
 ```json
