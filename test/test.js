@@ -1,25 +1,28 @@
 "use strict";
 require("typings-test");
 const path = require("path");
-require("should");
+const should = require("should");
 const npmExtra = require("../dist/index");
-describe("npmextra", function () {
-    it("should read a config file", function () {
-        let testData = npmExtra.dataFor({
-            toolName: "testTool",
-            defaultSettings: { someKey2: "someValue2" },
-            cwd: path.join(process.cwd(), "test/")
-        });
-        testData.should.have.ownProperty("someKey2");
+describe('npmextra', function () {
+    it('should state wether a npmextra.json exists', function () {
+        should(npmExtra.configFilePresent('./test/')).be.true();
     });
-    it("should read a config file", function () {
+    it('should read a config file', function () {
         let testData = npmExtra.dataFor({
-            toolName: "testTool",
-            defaultSettings: { someKey2: "someValue2" },
-            cwd: path.join(process.cwd(), "test/")
+            toolName: 'testTool',
+            defaultSettings: { someKey2: 'someValue2' },
+            cwd: path.join(process.cwd(), 'test/')
         });
-        testData.should.have.ownProperty("someKey2");
-        testData.testValue.should.equal(2);
+        should(testData).have.ownProperty('someKey2');
+    });
+    it('should read a config file', function () {
+        let testData = npmExtra.dataFor({
+            toolName: 'testTool',
+            defaultSettings: { someKey2: 'someValue2' },
+            cwd: path.join(process.cwd(), 'test/')
+        });
+        should(testData).have.ownProperty('someKey2');
+        should(testData.testValue).equal(2);
     });
 });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGVzdC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInRlc3QudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLHdCQUFzQjtBQUN0Qiw2QkFBOEI7QUFDOUIsa0JBQWdCO0FBRWhCLDBDQUEyQztBQUUzQyxRQUFRLENBQUMsVUFBVSxFQUFDO0lBQ2hCLEVBQUUsQ0FBQywyQkFBMkIsRUFBQztRQUMzQixJQUFJLFFBQVEsR0FBRyxRQUFRLENBQUMsT0FBTyxDQUFDO1lBQzVCLFFBQVEsRUFBQyxVQUFVO1lBQ25CLGVBQWUsRUFBQyxFQUFDLFFBQVEsRUFBQyxZQUFZLEVBQUM7WUFDdkMsR0FBRyxFQUFFLElBQUksQ0FBQyxJQUFJLENBQUMsT0FBTyxDQUFDLEdBQUcsRUFBRSxFQUFDLE9BQU8sQ0FBQztTQUN4QyxDQUFDLENBQUM7UUFDSCxRQUFRLENBQUMsTUFBTSxDQUFDLElBQUksQ0FBQyxXQUFXLENBQUMsVUFBVSxDQUFDLENBQUM7SUFDakQsQ0FBQyxDQUFDLENBQUM7SUFDSCxFQUFFLENBQUMsMkJBQTJCLEVBQUM7UUFDM0IsSUFBSSxRQUFRLEdBQUcsUUFBUSxDQUFDLE9BQU8sQ0FBQztZQUM1QixRQUFRLEVBQUMsVUFBVTtZQUNuQixlQUFlLEVBQUMsRUFBQyxRQUFRLEVBQUMsWUFBWSxFQUFDO1lBQ3ZDLEdBQUcsRUFBRSxJQUFJLENBQUMsSUFBSSxDQUFDLE9BQU8sQ0FBQyxHQUFHLEVBQUUsRUFBQyxPQUFPLENBQUM7U0FDeEMsQ0FBQyxDQUFDO1FBQ0gsUUFBUSxDQUFDLE1BQU0sQ0FBQyxJQUFJLENBQUMsV0FBVyxDQUFDLFVBQVUsQ0FBQyxDQUFDO1FBQzdDLFFBQVEsQ0FBQyxTQUFTLENBQUMsTUFBTSxDQUFDLEtBQUssQ0FBQyxDQUFDLENBQUMsQ0FBQztJQUN2QyxDQUFDLENBQUMsQ0FBQztBQUNQLENBQUMsQ0FBQyxDQUFDIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGVzdC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInRlc3QudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLHdCQUFxQjtBQUNyQiw2QkFBNkI7QUFDN0IsaUNBQWdDO0FBSWhDLDBDQUEwQztBQUUxQyxRQUFRLENBQUMsVUFBVSxFQUFDO0lBQ2hCLEVBQUUsQ0FBQyw0Q0FBNEMsRUFBRTtRQUM3QyxNQUFNLENBQUMsUUFBUSxDQUFDLGlCQUFpQixDQUFDLFNBQVMsQ0FBQyxDQUFDLENBQUMsRUFBRSxDQUFDLElBQUksRUFBRSxDQUFBO0lBQzNELENBQUMsQ0FBQyxDQUFBO0lBQ0YsRUFBRSxDQUFDLDJCQUEyQixFQUFDO1FBQzNCLElBQUksUUFBUSxHQUFHLFFBQVEsQ0FBQyxPQUFPLENBQUM7WUFDNUIsUUFBUSxFQUFFLFVBQVU7WUFDcEIsZUFBZSxFQUFFLEVBQUMsUUFBUSxFQUFFLFlBQVksRUFBQztZQUN6QyxHQUFHLEVBQUUsSUFBSSxDQUFDLElBQUksQ0FBQyxPQUFPLENBQUMsR0FBRyxFQUFFLEVBQUMsT0FBTyxDQUFDO1NBQ3hDLENBQUMsQ0FBQTtRQUNGLE1BQU0sQ0FBQyxRQUFRLENBQUMsQ0FBQyxJQUFJLENBQUMsV0FBVyxDQUFDLFVBQVUsQ0FBQyxDQUFBO0lBQ2pELENBQUMsQ0FBQyxDQUFBO0lBQ0YsRUFBRSxDQUFDLDJCQUEyQixFQUFDO1FBQzNCLElBQUksUUFBUSxHQUFHLFFBQVEsQ0FBQyxPQUFPLENBQUM7WUFDNUIsUUFBUSxFQUFFLFVBQVU7WUFDcEIsZUFBZSxFQUFFLEVBQUMsUUFBUSxFQUFFLFlBQVksRUFBQztZQUN6QyxHQUFHLEVBQUUsSUFBSSxDQUFDLElBQUksQ0FBQyxPQUFPLENBQUMsR0FBRyxFQUFFLEVBQUMsT0FBTyxDQUFDO1NBQ3hDLENBQUMsQ0FBQTtRQUNGLE1BQU0sQ0FBQyxRQUFRLENBQUMsQ0FBQyxJQUFJLENBQUMsV0FBVyxDQUFDLFVBQVUsQ0FBQyxDQUFBO1FBQzdDLE1BQU0sQ0FBQyxRQUFRLENBQUMsU0FBUyxDQUFDLENBQUMsS0FBSyxDQUFDLENBQUMsQ0FBQyxDQUFBO0lBQ3ZDLENBQUMsQ0FBQyxDQUFBO0FBQ04sQ0FBQyxDQUFDLENBQUEifQ==

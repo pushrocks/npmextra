@@ -19,15 +19,15 @@
   "homepage": "https://gitlab.com/pushrocks/npmextra#README",
   "dependencies": {
     "@types/q": "^0.x.x",
-    "beautylog": "^5.0.20",
-    "lodash": "^4.15.0",
+    "beautylog": "^5.0.23",
+    "lodash": "^4.16.1",
     "q": "^1.4.1",
-    "smartfile": "^4.0.13",
-    "typings-global": "^1.0.6"
+    "smartfile": "^4.0.20",
+    "typings-global": "^1.0.14"
   },
   "devDependencies": {
-    "@types/should": "^8.1.27",
+    "@types/should": "^8.1.30",
     "should": "^11.1.0",
-    "typings-test": "^1.0.1"
+    "typings-test": "^1.0.3"
   }
 }
