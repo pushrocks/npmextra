@@ -1,6 +1,6 @@
 {
   "name": "npmextra",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "do more with npm",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
