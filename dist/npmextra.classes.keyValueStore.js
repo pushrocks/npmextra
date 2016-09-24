@@ -1,7 +1,12 @@
 "use strict";
+class KeyValueStore {
+    constructor(optionsArg) {
+    }
+}
+exports.KeyValueStore = KeyValueStore;
 /**
- * reads a keyValueFile from disk
- */
+* reads a keyValueFile from disk
+*/
 let kvRead = () => {
 };
 /**
@@ -14,9 +19,4 @@ let kvWrite = () => {
  */
 let kevWipe = () => {
 };
-class KeyValueStore {
-    constructor(optionsArg) {
-    }
-}
-exports.KeyValueStore = KeyValueStore;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibnBtZXh0cmEuY2xhc3Nlcy5rZXlWYWx1ZVN0b3JlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vdHMvbnBtZXh0cmEuY2xhc3Nlcy5rZXlWYWx1ZVN0b3JlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFJQTs7R0FFRztBQUNILElBQUksTUFBTSxHQUFHO0FBRWIsQ0FBQyxDQUFBO0FBRUQ7O0dBRUc7QUFDSCxJQUFJLE9BQU8sR0FBRztBQUVkLENBQUMsQ0FBQTtBQUVEOztHQUVHO0FBQ0gsSUFBSSxPQUFPLEdBQUc7QUFFZCxDQUFDLENBQUE7QUFFRDtJQUNJLFlBQVksVUFFWDtJQUVELENBQUM7Q0FDSjtBQU5ELHNDQU1DIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibnBtZXh0cmEuY2xhc3Nlcy5rZXl2YWx1ZXN0b3JlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vdHMvbnBtZXh0cmEuY2xhc3Nlcy5rZXl2YWx1ZXN0b3JlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFNQTtJQUNJLFlBQVksVUFFWDtJQUVELENBQUM7Q0FBQTtBQUxMLHNDQUtLO0FBQ0Q7O0VBRUQ7QUFDSCxJQUFJLE1BQU0sR0FBQztBQUVYLENBQUMsQ0FBQTtBQUVEOztHQUVHO0FBQ0gsSUFBSSxPQUFPLEdBQUM7QUFFWixDQUFDLENBQUE7QUFFRDs7R0FFRztBQUNILElBQUksT0FBTyxHQUFDO0FBRVosQ0FBQyxDQUFBIn0=

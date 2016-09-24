@@ -2,87 +2,67 @@ import * as plugins from './npmextra.plugins'
 import * as paths from './npmextra.paths'
 
 /**
- * the main interface npmextra functions work with
+ * Npmextra class allows easy configuration of tools
  */
-export interface IDataFor {
-    toolName: string
-    defaultSettings?
-    cwd?: string
-}
+export class Npmextra {
+    cwd: string
+    lookupPath: string
+    npmextraJsonExists: boolean
+    npmextraJsonData: boolean
 
-/**
- * gets lookupPath
- */
-let getLookupPath = (cwdArg: string) => {
-    if (cwdArg) {
-        let cwdResolved = plugins.path.resolve(cwdArg)
-        return plugins.path.join(cwdResolved, 'npmextra.json')
-    } else {
-        return paths.configFile
-    };
-}
-
-/**
- * gets you the configuration data for
- * @executes SYNC
- */
-export let dataFor = <IOptions>(optionsArg: IDataFor): IOptions => {
-
-    // make supplied defaultSettings and npmextra.json overlap
-    if (
-        typeof optionsArg.toolName !== undefined
-        && typeof optionsArg.defaultSettings !== undefined
-    ) {
-        let newDefaultOptions = {}
-        newDefaultOptions[optionsArg.toolName] = optionsArg.defaultSettings
-        optionsArg.defaultSettings = newDefaultOptions
-    };
-
-    // set lookup path
-    let lookupPath: string = getLookupPath(optionsArg.cwd)
-
-    // get allData
-    let allData
-    if (configFilePresent(lookupPath)) {
-        allData = plugins.smartfile.fs.toObjectSync(getLookupPath(optionsArg.cwd))
-    } else {
-        plugins.beautylog.warn(`${lookupPath} is missing!`)
-        allData = {}
-    };
-
-    // assign all data
-    allData = plugins.lodash.merge({}, optionsArg.defaultSettings, allData)
-    if (optionsArg.toolName) {
-        if (allData[optionsArg.toolName]) {
-            return allData[optionsArg.toolName]
+    /**
+     * creates instance of Npmextra
+     */
+    constructor(cwdArg?: string) {
+        if (cwdArg) {
+            this.cwd = cwdArg
         } else {
-            plugins.beautylog.error(`There is no data for ${optionsArg.toolName}`)
-            return undefined
+            this.cwd = paths.cwd
         }
-    } else {
-        return allData
+        this.checkLookupPath()
+        this.checkNpmextraJsonExists()
+        this.checkNpmextraJsonData()
     }
-}
 
-export let dataForExists = (optionsArg: IDataFor): boolean => {
-    // set lookup path
-    let lookupPath: string = getLookupPath(optionsArg.cwd)
-    if (configFilePresent(optionsArg.cwd)) {
-        let allData = plugins.smartfile.fs.toObjectSync(lookupPath)
-        if (allData[optionsArg.toolName]) {
-            return true
+    /**
+     * merges the supplied options with the ones from npmextra.json
+     */
+    dataFor(toolnameArg: string, defaultOptionsArg: any) {
+        let npmextraToolOptions
+        if(this.npmextraJsonData[toolnameArg]) {
+            npmextraToolOptions = this.npmextraJsonData[toolnameArg]
         } else {
-            return false
+            npmextraToolOptions = {}
         }
-    } else {
-        return false
+        let mergedOptions = plugins.lodash.merge({}, defaultOptionsArg, npmextraToolOptions)
+        return mergedOptions
     }
-}
 
-/**
- * tells you if a configfile is present
- */
-export let configFilePresent = (cwdArg: string): boolean => {
-    let lookupPath: string = getLookupPath(cwdArg)
-    return plugins.smartfile.fs.fileExistsSync(lookupPath)
+    /**
+     * checks if the JSON exists
+     */
+    private checkNpmextraJsonExists() {
+        this.npmextraJsonExists = plugins.smartfile.fs.fileExistsSync(this.lookupPath)
+    }
+
+    /**
+     * gets lookupPath
+     */
+    private checkLookupPath() {
+        if (this.cwd) {
+            this.lookupPath = plugins.path.join(this.cwd, 'npmextra.json')
+        } else {
+            this.lookupPath = paths.configFile
+        };
+    }
+
+    /**
+     * get npmextraJsonData
+     */
+    private checkNpmextraJsonData() {
+        if (this.npmextraJsonExists) {
+            this.npmextraJsonData = plugins.smartfile.fs.toObjectSync(this.lookupPath)
+        }
+    }
+
 }
