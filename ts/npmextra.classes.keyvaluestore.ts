@@ -3,7 +3,6 @@ import * as plugins from './npmextra.plugins'
 export type keyValueStoreTypes = 'path' | 'gitProject'
 
 
-
 export class KeyValueStore {
     constructor(optionsArg: {
         type: keyValueStoreTypes
@@ -13,21 +12,21 @@ export class KeyValueStore {
     /**
  * reads a keyValueFile from disk
  */
-let kvRead () {
+    kvRead() {
 
-}
+    }
 
-/**
- * writes a key value file to disk
- */
-let kvWrite () {
+    /**
+     * writes a key value file to disk
+     */
+    kvWrite() {
 
-}
+    }
 
-/**
- * wipes a key value store from disk
- */
-let kevWipe () {
+    /**
+     * wipes a key value store from disk
+     */
+    kevWipe() {
 
-}
+    }
 }

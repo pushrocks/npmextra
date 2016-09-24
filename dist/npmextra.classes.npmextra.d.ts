@@ -13,7 +13,7 @@ export declare class Npmextra {
     /**
      * merges the supplied options with the ones from npmextra.json
      */
-    dataFor(toolnameArg: string, defaultOptionsArg: any): any;
+    dataFor<IToolConfig>(toolnameArg: string, defaultOptionsArg: any): IToolConfig;
     /**
      * checks if the JSON exists
      */

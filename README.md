@@ -32,16 +32,16 @@ npmextra.json
 ```
 
 ```typescript
-import * as npmextra from 'npmextra'
+import { Npmextra } from 'npmextra'
 
-npmextra.dataFor({
-    toolName:'sometool',
-    defaultSettings: { // gets merged with whatever is in the configfile
+let myNpmExtra = new Npmextra('my/path/to/cwd') // cwd argument is optional 
+mergedData = myNpmExtra.dataFor(
+    'sometool',
+    { // gets merged with whatever is in the configfile
         defaultKey1: 'defaultValue1', // so this will get overwritten with "awesomeValueFromConfig"
         defaultKey2: 'defaultValue2' // this one will pass through unaltered
-    },
-    cwd?: string // lets you specifiy a custom current working directory to look for the npmextra.json
-})
+    }
+)
 ```
 
 [![npm](https://push.rocks/assets/repo-header.svg)](https://push.rocks)

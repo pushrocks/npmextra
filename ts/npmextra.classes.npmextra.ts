@@ -27,9 +27,9 @@ export class Npmextra {
     /**
      * merges the supplied options with the ones from npmextra.json
      */
-    dataFor(toolnameArg: string, defaultOptionsArg: any) {
+    dataFor<IToolConfig>(toolnameArg: string, defaultOptionsArg: any): IToolConfig {
         let npmextraToolOptions
-        if(this.npmextraJsonData[toolnameArg]) {
+        if (this.npmextraJsonData[toolnameArg]) {
             npmextraToolOptions = this.npmextraJsonData[toolnameArg]
         } else {
             npmextraToolOptions = {}
