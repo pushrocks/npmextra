@@ -22,7 +22,7 @@
     "beautylog": "^5.0.23",
     "lodash": "^4.16.1",
     "q": "^1.4.1",
-    "smartfile": "^4.0.20",
+    "smartfile": "^4.0.21",
     "typings-global": "^1.0.14"
   },
   "devDependencies": {

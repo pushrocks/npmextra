@@ -46,10 +46,10 @@ export class KeyValueStore {
     /**
      * computes the identity
      */
-    private initIdentity(identityStringArg: string){
+    private initIdentity(identityStringArg: string) {
 
     }
-    
+
     /**
      * computes the filePath 
      */
@@ -63,5 +63,6 @@ export class KeyValueStore {
             baseDir = paths.kvPathDir
         }
         this.filePath = plugins.path.join(baseDir, this.identity + '.json')
+        plugins.smartfile.fs.ensureFileSync(this.filePath,'{}')
     }
 }
