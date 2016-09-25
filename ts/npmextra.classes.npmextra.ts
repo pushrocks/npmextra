@@ -8,7 +8,7 @@ export class Npmextra {
     cwd: string
     lookupPath: string
     npmextraJsonExists: boolean
-    npmextraJsonData: boolean
+    npmextraJsonData: any
 
     /**
      * creates instance of Npmextra
@@ -62,6 +62,8 @@ export class Npmextra {
     private checkNpmextraJsonData() {
         if (this.npmextraJsonExists) {
             this.npmextraJsonData = plugins.smartfile.fs.toObjectSync(this.lookupPath)
+        } else {
+            this.npmextraJsonData = {}
         }
     }
 

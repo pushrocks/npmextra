@@ -5,7 +5,7 @@ export declare class Npmextra {
     cwd: string;
     lookupPath: string;
     npmextraJsonExists: boolean;
-    npmextraJsonData: boolean;
+    npmextraJsonData: any;
     /**
      * creates instance of Npmextra
      */

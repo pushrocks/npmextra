@@ -47,7 +47,7 @@ export class KeyValueStore {
      * computes the identity
      */
     private initIdentity(identityStringArg: string) {
-
+        
     }
 
     /**
