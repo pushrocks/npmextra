@@ -1,17 +1,16 @@
 # npmextra
-do more with npm.
-
-npmextra is a hub for a series of js tools that help writing, documenting and maintaining npm modules.
+do more with npm
 
 ## Availabililty
-[![npm](https://push.rocks/assets/repo-button-npm.svg)](https://www.npmjs.com/package/npmextra)
-[![git](https://push.rocks/assets/repo-button-git.svg)](https://gitlab.com/pushrocks/npmextra)
-[![git](https://push.rocks/assets/repo-button-mirror.svg)](https://github.com/pushrocks/npmextra)
-[![docs](https://push.rocks/assets/repo-button-docs.svg)](https://pushrocks.gitlab.io/npmextra/)
+[![npm](https://pushrocks.gitlab.io/assets/repo-button-npm.svg)](https://www.npmjs.com/package/npmextra)
+[![git](https://pushrocks.gitlab.io/assets/repo-button-git.svg)](https://GitLab.com/pushrocks/npmextra)
+[![git](https://pushrocks.gitlab.io/assets/repo-button-mirror.svg)](https://github.com/pushrocks/npmextra)
+[![docs](https://pushrocks.gitlab.io/assets/repo-button-docs.svg)](https://pushrocks.gitlab.io/npmextra/)
 
 ## Status for master
-[![build status](https://gitlab.com/pushrocks/npmextra/badges/master/build.svg)](https://gitlab.com/pushrocks/npmextra/commits/master)
-[![coverage report](https://gitlab.com/pushrocks/npmextra/badges/master/coverage.svg)](https://gitlab.com/pushrocks/npmextra/commits/master)
+[![build status](https://GitLab.com/pushrocks/npmextra/badges/master/build.svg)](https://GitLab.com/pushrocks/npmextra/commits/master)
+[![coverage report](https://GitLab.com/pushrocks/npmextra/badges/master/coverage.svg)](https://GitLab.com/pushrocks/npmextra/commits/master)
+[![npm downloads per month](https://img.shields.io/npm/dm/npmextra.svg)](https://www.npmjs.com/package/npmextra)
 [![Dependency Status](https://david-dm.org/pushrocks/npmextra.svg)](https://david-dm.org/pushrocks/npmextra)
 [![bitHound Dependencies](https://www.bithound.io/github/pushrocks/npmextra/badges/dependencies.svg)](https://www.bithound.io/github/pushrocks/npmextra/master/dependencies/npm)
 [![bitHound Code](https://www.bithound.io/github/pushrocks/npmextra/badges/code.svg)](https://www.bithound.io/github/pushrocks/npmextra)
@@ -20,6 +19,8 @@ npmextra is a hub for a series of js tools that help writing, documenting and ma
 [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 ## Usage
+Use TypeScript for best in class instellisense.
+
 The main purpose of npmextra is to configure different tools using one npmextra.json. This way complex setups avoid additional complexity caused by too many configuration files.
 
 npmextra.json
@@ -44,4 +45,9 @@ mergedData = myNpmExtra.dataFor(
 )
 ```
 
-[![npm](https://push.rocks/assets/repo-header.svg)](https://push.rocks)
+For further information read the linked docs at the top of this README.
+
+> MIT licensed | **&copy;** [Lossless GmbH](https://lossless.gmbh)
+| By using this npm module you agree to our [privacy policy](https://lossless.gmbH/privacy.html)
+
+[![repo-footer](https://pushrocks.gitlab.io/assets/repo-footer.svg)](https://push.rocks)

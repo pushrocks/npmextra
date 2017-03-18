@@ -1,9 +1,9 @@
-export declare type keyValueStoreTypes = 'path' | 'gitProject' | 'customString';
+export declare type TKeyValueStore = 'path' | 'gitProject' | 'custom';
 export declare class KeyValueStore {
-    type: string;
+    type: TKeyValueStore;
     identity: string;
     filePath: string;
-    constructor(typeArg: keyValueStoreTypes, identityStringArg?: string);
+    constructor(typeArg: TKeyValueStore, customStringArg?: string);
     /**
      * reads a keyValueFile from disk
      */
@@ -23,7 +23,7 @@ export declare class KeyValueStore {
     /**
      * computes the identity
      */
-    private initIdentity(identityStringArg);
+    private initIdentity(customStringArg);
     /**
      * computes the filePath
      */
