@@ -3,6 +3,9 @@ import * as paths from './npmextra.paths'
 
 export type TKeyValueStore = 'path' | 'gitProject' | 'custom'
 
+/**
+ * kvStore is a simple key vlaue store to store data about projects between runs
+ */
 export class KeyValueStore {
   type: TKeyValueStore // the type of the kvStore
   identity: string // the identity of the kvStore
@@ -11,7 +14,7 @@ export class KeyValueStore {
     // set kvStoreType
     this.type = typeArg
     this.identity = customStringArg
-    this.initIdentity(customStringArg)
+    this.initFilePath()
   }
 
   /**
@@ -45,10 +48,10 @@ export class KeyValueStore {
   /**
    * computes the identity
    */
-  private initIdentity(customStringArg: string) {
+  private initFilePath() {
+    // determine the right base directory
     let baseDir: string
     if (this.type === 'custom') {
-      this.identity = customStringArg
       baseDir = paths.kvCustomDir
     } else if (this.type === 'gitProject') {
       baseDir = paths.kvGitDir
@@ -58,12 +61,5 @@ export class KeyValueStore {
     }
     this.filePath = plugins.path.join(baseDir, this.identity + '.json')
     plugins.smartfile.fs.ensureFileSync(this.filePath, '{}')
-  }
-
-  /**
-   * computes the filePath 
-   */
-  private initFilePath() {
-
   }
 }

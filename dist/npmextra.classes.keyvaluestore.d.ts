@@ -1,4 +1,7 @@
 export declare type TKeyValueStore = 'path' | 'gitProject' | 'custom';
+/**
+ * kvStore is a simple key vlaue store to store data about projects between runs
+ */
 export declare class KeyValueStore {
     type: TKeyValueStore;
     identity: string;
@@ -22,10 +25,6 @@ export declare class KeyValueStore {
     update(): void;
     /**
      * computes the identity
-     */
-    private initIdentity(customStringArg);
-    /**
-     * computes the filePath
      */
     private initFilePath();
 }

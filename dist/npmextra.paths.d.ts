@@ -13,7 +13,7 @@ export declare let kvCustomDir: string;
  */
 export declare let kvGitDir: string;
 /**
- * keyValue for path based Key
+ * keyValue for path based keyValue store
  */
 export declare let kvPathDir: string;
 export declare let configFile: string;

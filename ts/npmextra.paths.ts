@@ -24,7 +24,7 @@ export let kvCustomDir = plugins.path.join(kvBase, 'custom')
 export let kvGitDir = plugins.path.join(kvBase, 'git')
 
 /**
- * keyValue for path based Key
+ * keyValue for path based keyValue store
  */
 export let kvPathDir = plugins.path.join(kvBase, 'path')
 

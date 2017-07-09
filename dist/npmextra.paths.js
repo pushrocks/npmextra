@@ -20,7 +20,7 @@ exports.kvCustomDir = plugins.path.join(exports.kvBase, 'custom');
  */
 exports.kvGitDir = plugins.path.join(exports.kvBase, 'git');
 /**
- * keyValue for path based Key
+ * keyValue for path based keyValue store
  */
 exports.kvPathDir = plugins.path.join(exports.kvBase, 'path');
 // files
