@@ -34,7 +34,7 @@ export class Npmextra {
     } else {
       npmextraToolOptions = {}
     }
-    let mergedOptions = plugins.lodash.merge({}, defaultOptionsArg, npmextraToolOptions)
+    let mergedOptions = plugins.smartlodash.merge({}, defaultOptionsArg, npmextraToolOptions)
     return mergedOptions
   }
 

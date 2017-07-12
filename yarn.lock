@@ -712,9 +712,9 @@ tapbundle@^1.1.1:
     smartq "^1.1.1"
     typings-global "^1.0.19"
 
-taskbuffer@^1.0.21:
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/taskbuffer/-/taskbuffer-1.0.21.tgz#8471cb770ad30ca8b12d2166ce5dd45e634782ea"
+taskbuffer@^1.0.22:
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/taskbuffer/-/taskbuffer-1.0.22.tgz#05d498d157d79dd897e11e6225fd447ba2f2fa3e"
   dependencies:
     "@types/cron" "^1.2.1"
     "@types/lodash" "4.x.x"

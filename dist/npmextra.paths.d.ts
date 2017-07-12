@@ -1,5 +1,6 @@
 export declare let cwd: string;
 export declare let packageDir: string;
+export declare let home: any;
 /**
  * keyValue base path
  */

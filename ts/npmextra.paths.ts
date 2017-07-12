@@ -8,10 +8,13 @@ export let packageDir = plugins.path.join(__dirname,'../')
 // keyValueStore specific
 // ----------------------
 
+export let home = plugins.smartpath.get.home()
+
 /**
  * keyValue base path
  */
-export let kvBase = '~/.npmextra/kv'
+export let kvBase = plugins.path.join(home,'.npmextra/kv')
+
 
 /**
  * the base directory for custom string based key value store
