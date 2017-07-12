@@ -1,6 +1,16 @@
 import 'typings-global'
-export import beautylog = require('beautylog')
-export import lodash = require('lodash')
-export import path = require('path')
-export import smartfile = require('smartfile')
-export import q = require('smartq')
+import * as beautylog from 'beautylog'
+import * as path from 'path'
+import * as smartfile from 'smartfile'
+import smartlodash from 'smartlodash'
+import * as smartq from 'smartq'
+import * as taskbuffer from 'taskbuffer'
+
+export {
+  beautylog,
+  path,
+  smartfile,
+  smartq,
+  smartlodash,
+  taskbuffer
+}

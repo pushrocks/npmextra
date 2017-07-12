@@ -13,7 +13,7 @@ export class Npmextra {
   /**
    * creates instance of Npmextra
    */
-  constructor(cwdArg?: string) {
+  constructor (cwdArg?: string) {
     if (cwdArg) {
       this.cwd = cwdArg
     } else {
