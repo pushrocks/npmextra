@@ -26,6 +26,10 @@ export class KeyValueStore {
         plugins.smartfile.fs.toObjectSync(this.filePath),
         this.dataObject
       )
+      for (let key in this.deletedObject) {
+        delete this.dataObject[key]
+      }
+      this.deletedObject = {}
       await plugins.smartfile.memory.toFs(
         JSON.stringify(this.dataObject),
         this.filePath
