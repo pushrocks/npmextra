@@ -52,6 +52,9 @@ mergedData = myNpmExtra.dataFor(
 * [npmci](https://www.npmjs.com/package/npmci)
 * [npmdocker](https://www.npmjs.com/package/npmdocker)
 
+## Using the KeyValueStore
+
+
 For further information read the linked docs at the top of this README.
 
 > MIT licensed | **&copy;** [Lossless GmbH](https://lossless.gmbh)
