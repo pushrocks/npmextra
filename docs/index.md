@@ -21,6 +21,7 @@ do more with npm
 ## Usage
 Use TypeScript for best in class instellisense.
 
+## Using npmextra for managing toolconfigs
 The main purpose of npmextra is to configure different tools using one npmextra.json. This way complex setups avoid additional complexity caused by too many configuration files.
 
 npmextra.json
@@ -44,6 +45,12 @@ mergedData = myNpmExtra.dataFor(
     }
 )
 ```
+
+### Tools that already use the config feature of npmextra
+
+* [npmts](https://www.npmjs.com/package/npmts)
+* [npmci](https://www.npmjs.com/package/npmci)
+* [npmdocker](https://www.npmjs.com/package/npmdocker)
 
 For further information read the linked docs at the top of this README.
 

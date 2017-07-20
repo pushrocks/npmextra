@@ -21,30 +21,6 @@ do more with npm
 ## Usage
 Use TypeScript for best in class instellisense.
 
-The main purpose of npmextra is to configure different tools using one npmextra.json. This way complex setups avoid additional complexity caused by too many configuration files.
-
-npmextra.json
-```json
-{
-    "sometool": {
-        "defaultKey1": "awesomeValueFromConfig"
-    }
-}
-```
-
-```typescript
-import { Npmextra } from 'npmextra'
-
-let myNpmExtra = new Npmextra('my/path/to/cwd') // cwd argument is optional 
-mergedData = myNpmExtra.dataFor(
-    'sometool',
-    { // gets merged with whatever is in the configfile
-        defaultKey1: 'defaultValue1', // so this will get overwritten with "awesomeValueFromConfig"
-        defaultKey2: 'defaultValue2' // this one will pass through unaltered
-    }
-)
-```
-
 For further information read the linked docs at the top of this README.
 
 > MIT licensed | **&copy;** [Lossless GmbH](https://lossless.gmbh)

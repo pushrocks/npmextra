@@ -23,9 +23,10 @@
     "smartlodash": "^1.0.1",
     "smartpath": "^3.2.8",
     "smartq": "^1.1.6",
-    "tapbundle": "^1.1.1",
     "taskbuffer": "^1.0.22",
     "typings-global": "^1.0.19"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "tapbundle": "^1.1.1"
+  }
 }
