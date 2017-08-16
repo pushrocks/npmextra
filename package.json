@@ -19,12 +19,12 @@
   "homepage": "https://gitlab.com/pushrocks/npmextra#README",
   "dependencies": {
     "beautylog": "^6.1.10",
-    "smartfile": "^4.2.17",
+    "smartfile": "^4.2.20",
     "smartlodash": "^1.0.1",
     "smartpath": "^3.2.8",
     "smartq": "^1.1.6",
     "taskbuffer": "^1.0.22",
-    "typings-global": "^1.0.19"
+    "typings-global": "^1.0.20"
   },
   "devDependencies": {
     "tapbundle": "^1.1.1"

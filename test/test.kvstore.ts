@@ -1,6 +1,6 @@
 import { expect, tap } from 'tapbundle'
 
-import * as npmextra from '../dist/index'
+import * as npmextra from '../ts/index'
 
 let myKeyValueStore: npmextra.KeyValueStore
 
@@ -16,10 +16,10 @@ tap.test('expect result to be empty', async () => {
 })
 
 tap.test('expect to add an object to the kv Store', async () => {
-  await myKeyValueStore.write({
+  await myKeyValueStore.writeAll({
     myKey: 'myValue'
   })
-  await expect(myKeyValueStore.read('myKey')).to.eventually.equal('myValue')
+  await expect(myKeyValueStore.readKey('myKey')).to.eventually.equal('myValue')
 })
 
 tap.start()

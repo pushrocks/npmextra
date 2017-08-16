@@ -65,15 +65,24 @@ export class KeyValueStore {
   /**
    * reads a keyValueFile from disk
    */
-  async read (keyArg: string) {
+  async readKey (keyArg: string) {
     let data = await this.readAll()
     return data[keyArg]
   }
 
   /**
-   * writes a key value file to disk
+   * writes a specific key to the keyValueStore
    */
-  async write (keyValueObject) {
+  async writeKey (keyArg: string, valueArg: any) {
+    let writeObject: any = {}
+    writeObject[keyArg] = valueArg
+    this.writeAll(writeObject)
+  }
+
+  /**
+   * writes all keyValue pairs in the object argument
+   */
+  async writeAll (keyValueObject) {
     plugins.smartlodash.merge(this.dataObject, keyValueObject)
     this.syncTask.trigger()
   }

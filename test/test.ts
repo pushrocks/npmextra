@@ -2,7 +2,7 @@ import { expect, tap } from 'tapbundle'
 import path = require('path')
 
 // module to test
-import npmExtra = require('../dist/index')
+import npmExtra = require('../ts/index')
 
 let testNpmextra: npmExtra.Npmextra
 

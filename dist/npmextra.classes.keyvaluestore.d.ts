@@ -24,11 +24,15 @@ export declare class KeyValueStore {
     /**
      * reads a keyValueFile from disk
      */
-    read(keyArg: string): Promise<any>;
+    readKey(keyArg: string): Promise<any>;
     /**
-     * writes a key value file to disk
+     * writes a specific key to the keyValueStore
      */
-    write(keyValueObject: any): Promise<void>;
+    writeKey(keyArg: string, valueArg: any): Promise<void>;
+    /**
+     * writes all keyValue pairs in the object argument
+     */
+    writeAll(keyValueObject: any): Promise<void>;
     /**
      * wipes a key value store from disk
      */
