@@ -1,11 +1,13 @@
 {
-  "name": "npmextra",
+  "name": "@pushrocks/npmextra",
   "version": "2.0.9",
+  "private": false,
   "description": "do more with npm",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "test": "(npmts)"
+    "test": "(tstest test/)",
+    "build": "(tsbuild)"
   },
   "repository": {
     "type": "git",
@@ -18,15 +20,18 @@
   },
   "homepage": "https://gitlab.com/pushrocks/npmextra#README",
   "dependencies": {
-    "beautylog": "^6.1.10",
-    "smartfile": "^4.2.20",
-    "smartlodash": "^1.0.1",
-    "smartpath": "^3.2.8",
-    "smartq": "^1.1.6",
-    "taskbuffer": "^1.0.22",
-    "typings-global": "^1.0.20"
+    "@pushrocks/smartfile": "^6.0.8",
+    "@pushrocks/smartlog": "^2.0.1",
+    "@pushrocks/smartpath": "^4.0.1",
+    "@pushrocks/smartpromise": "^2.0.5",
+    "@pushrocks/taskbuffer": "^2.0.5",
+    "smartlodash": "^1.0.1"
   },
   "devDependencies": {
-    "tapbundle": "^1.1.1"
+    "@gitzone/tsbuild": "^2.0.22",
+    "@gitzone/tsrun": "^1.1.12",
+    "@gitzone/tstest": "^1.0.15",
+    "@pushrocks/tapbundle": "^3.0.5",
+    "@types/node": "^10.9.4"
   }
 }

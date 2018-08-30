@@ -1,18 +1,9 @@
-import 'typings-global'
-import * as beautylog from 'beautylog'
-import * as path from 'path'
-import * as smartfile from 'smartfile'
-import smartlodash from 'smartlodash'
-import * as smartpath from 'smartpath'
-import * as smartq from 'smartq'
-import * as taskbuffer from 'taskbuffer'
+import * as beautylog from '@pushrocks/smartlog';
+import * as path from 'path';
+import * as smartfile from '@pushrocks/smartfile';
+import smartlodash from 'smartlodash';
+import * as smartpath from '@pushrocks/smartpath';
+import * as smartpromise from '@pushrocks/smartpromise';
+import * as taskbuffer from '@pushrocks/taskbuffer';
 
-export {
-  beautylog,
-  path,
-  smartfile,
-  smartpath,
-  smartq,
-  smartlodash,
-  taskbuffer
-}
+export { beautylog, path, smartfile, smartpath, smartpromise, smartlodash, taskbuffer };
