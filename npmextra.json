@@ -1,6 +1,7 @@
 {
   "npmci": {
-    "globalNpmTools": []
+    "globalNpmTools": [],
+    "npmAccessLevel": "public"
   },
   "npmts": {
     "testConfig": {
