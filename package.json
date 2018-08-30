@@ -1,6 +1,6 @@
 {
   "name": "@pushrocks/npmextra",
-  "version": "2.0.9",
+  "version": "3.0.0",
   "private": false,
   "description": "do more with npm",
   "main": "dist/index.js",
