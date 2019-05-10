@@ -7,5 +7,15 @@
     "testConfig": {
       "parallel": false
     }
+  },
+  "gitzone": {
+    "module": {
+      "githost": "gitlab.com",
+      "gitscope": "pushrocks",
+      "gitrepo": "npmextra",
+      "shortDescription": "do more with npm",
+      "npmPackagename": "@pushrocks/npmextra",
+      "license": "MIT"
+    }
   }
 }
