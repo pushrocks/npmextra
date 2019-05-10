@@ -9,14 +9,14 @@ export type TKeyValueStore = 'path' | 'gitProject' | 'custom';
  * kvStore is a simple key vlaue store to store data about projects between runs
  */
 export class KeyValueStore {
-  dataObject: any;
-  deletedObject: any = {};
-  initialReadTask = new TaskOnce({
+  public dataObject: any;
+  public deletedObject: any = {};
+  public initialReadTask = new TaskOnce({
     taskFunction: async () => {
       this.dataObject = plugins.smartfile.fs.toObjectSync(this.filePath);
     }
   });
-  syncTask = new Task({
+  public syncTask = new Task({
     buffered: true,
     bufferMax: 2,
     execDelay: 500,
@@ -33,9 +33,9 @@ export class KeyValueStore {
     },
     name: 'syncTask'
   });
-  type: TKeyValueStore; // the type of the kvStore
-  identity: string; // the identity of the kvStore
-  filePath: string; // the filePath of the kvStore
+  public type: TKeyValueStore; // the type of the kvStore
+  public identity: string; // the identity of the kvStore
+  public filePath: string; // the filePath of the kvStore
 
   /**
    * the constructor of keyvalue store
@@ -52,7 +52,7 @@ export class KeyValueStore {
   /**
    * reads all keyValue pairs at once and returns them
    */
-  async readAll() {
+  public async readAll() {
     await this.initialReadTask.trigger();
     this.syncTask.trigger();
     return this.dataObject;
@@ -61,7 +61,7 @@ export class KeyValueStore {
   /**
    * reads a keyValueFile from disk
    */
-  async readKey(keyArg: string) {
+  public async readKey(keyArg: string) {
     let data = await this.readAll();
     return data[keyArg];
   }
@@ -95,7 +95,7 @@ export class KeyValueStore {
   /**
    * updates a value
    */
-  async update(keyObject) {}
+  public async update(keyObject) {};
 
   /**
    * computes the identity
