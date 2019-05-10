@@ -21,12 +21,11 @@ export class KeyValueStore {
     bufferMax: 2,
     execDelay: 500,
     taskFunction: async () => {
-      this.dataObject = plugins.smartlodash.merge(
-        {},
-        plugins.smartfile.fs.toObjectSync(this.filePath),
-        this.dataObject
-      );
-      for (let key in this.deletedObject) {
+      this.dataObject = {
+        ...plugins.smartfile.fs.toObjectSync(this.filePath),
+        ...this.dataObject
+      };
+      for (const key of Object.keys(this.deletedObject)) {
         delete this.dataObject[key];
       }
       this.deletedObject = {};
@@ -79,15 +78,15 @@ export class KeyValueStore {
   /**
    * writes all keyValue pairs in the object argument
    */
-  async writeAll(keyValueObject) {
-    plugins.smartlodash.merge(this.dataObject, keyValueObject);
+  public async writeAll(keyValueObject) {
+    this.dataObject = {...this.dataObject, ...keyValueObject};
     this.syncTask.trigger();
   }
 
   /**
    * wipes a key value store from disk
    */
-  async wipe() {
+  public async wipe() {
     for (let key in this.dataObject) {
       this.deletedObject[key] = this.dataObject[key];
     }
