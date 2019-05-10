@@ -95,7 +95,7 @@ export class KeyValueStore {
   /**
    * updates a value
    */
-  public async update(keyObject) {};
+  public async update(keyObject) {}
 
   /**
    * computes the identity
