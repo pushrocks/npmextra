@@ -1,7 +1,7 @@
 import * as plugins from './npmextra.plugins';
 import * as paths from './npmextra.paths';
 
-import { Task, TaskOnce } from '@pushrocks/taskbuffer';
+import { Task } from '@pushrocks/taskbuffer';
 
 export type TKeyValueStore = 'path' | 'gitProject' | 'custom';
 
@@ -26,7 +26,7 @@ export class KeyValueStore {
       }
       this.deletedObject = {};
       await plugins.smartfile.memory.toFs(JSON.stringify(this.dataObject), this.filePath);
-    },
+    }
   });
   /**
    * computes the identity
@@ -46,8 +46,7 @@ export class KeyValueStore {
     plugins.smartfile.fs.ensureDirSync(paths.kvGitDir);
     plugins.smartfile.fs.ensureDirSync(paths.kvPathDir);
     plugins.smartfile.fs.ensureFileSync(this.filePath, '{}');
-  }
-
+  };
 
   public type: TKeyValueStore; // the type of the kvStore
   public identity: string; // the identity of the kvStore
@@ -99,7 +98,7 @@ export class KeyValueStore {
    * writes all keyValue pairs in the object argument
    */
   public async writeAll(keyValueObject) {
-    this.dataObject = {...this.dataObject, ...keyValueObject};
+    this.dataObject = { ...this.dataObject, ...keyValueObject };
     await this.syncTask.trigger();
   }
 
