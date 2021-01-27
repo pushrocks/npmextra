@@ -17,7 +17,7 @@ tap.test('expect result to be empty', async () => {
 
 tap.test('expect to add an object to the kv Store', async () => {
   await myKeyValueStore.writeAll({
-    myKey: 'myValue'
+    myKey: 'myValue',
   });
   await expect(myKeyValueStore.readKey('myKey')).to.eventually.equal('myValue');
 });

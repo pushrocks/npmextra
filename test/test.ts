@@ -24,7 +24,7 @@ tap.test('should pass through default value, if not overriden by config from fil
 
 tap.test('should read a config file', async () => {
   let testData = testNpmextra.dataFor<any>('testTool', {
-    someKey2: 'someValue2'
+    someKey2: 'someValue2',
   });
   expect(testData).have.ownProperty('someKey2');
   expect(testData.testValue).equal(2);

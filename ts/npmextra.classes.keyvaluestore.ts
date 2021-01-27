@@ -14,19 +14,19 @@ export class KeyValueStore {
   public syncTask = new Task({
     name: 'syncTask',
     buffered: true,
-    bufferMax: 2,
-    execDelay: 500,
+    bufferMax: 1,
+    execDelay: 0,
     taskFunction: async () => {
       this.dataObject = {
         ...plugins.smartfile.fs.toObjectSync(this.filePath),
-        ...this.dataObject
+        ...this.dataObject,
       };
       for (const key of Object.keys(this.deletedObject)) {
         delete this.dataObject[key];
       }
       this.deletedObject = {};
       await plugins.smartfile.memory.toFs(JSON.stringify(this.dataObject), this.filePath);
-    }
+    },
   });
   /**
    * computes the identity
@@ -85,7 +85,7 @@ export class KeyValueStore {
    */
   public async writeKey(keyArg: string, valueArg: any) {
     await this.writeAll({
-      [keyArg]: valueArg
+      [keyArg]: valueArg,
     });
   }
 

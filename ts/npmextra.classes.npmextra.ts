@@ -36,7 +36,7 @@ export class Npmextra {
     }
     let mergedOptions = {
       ...defaultOptionsArg,
-      ...npmextraToolOptions
+      ...npmextraToolOptions,
     };
     return mergedOptions;
   }
